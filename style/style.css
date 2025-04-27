@@ -1,0 +1,247 @@
+.containerCard, .containerCard1 {
+    background: #5e5e5e;
+    font-size: 28px;
+    margin: max-content;
+    padding: 20px;
+    border: 2px solid #747474;
+    background: linear-gradient(135deg, rgba(94, 94, 94, 0.1),  rgb(94, 94, 94, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ababab;
+    transition-duration: 0.3s;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(244, 244, 244);
+    font-family: poppins;
+}
+
+code {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(107, 106, 106, 0.1),  rgba(59, 59, 59, 0));
+    color: rgb(244, 244, 244);
+    border-radius: 6px;
+    font-family: poppins;
+    white-space: pre-wrap; 
+    overflow-x: auto;
+    font-size: clamp(.7rem, 2vw, 1.2rem);
+    padding: 3px;
+    vertical-align: middle;
+    
+}
+ul{
+    margin-top: 10px;
+    border: 2px solid #747474;
+    background: linear-gradient(135deg, rgba(94, 94, 94, 0.1),  rgb(94, 94, 94, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ababab;
+    transition-duration: 0.3s;
+}
+.containerCard code {
+    border: 2px solid #747474;
+    background: linear-gradient(135deg, rgba(94, 94, 94, 0.1),  rgb(94, 94, 94, 0));
+    padding: 3px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+li {
+    font-size: clamp(.4rem, 1.5vw, 1.4rem);
+}
+
+li::marker{
+    color: #dedfe0;
+    font-size: clamp(.6rem, 1.5vw, 1.4rem);
+}
+ul:hover {
+    border-radius: 8px;
+    box-shadow: 0 0 20px #ababab;
+    -webkit-transform: scale(1.002);
+    transform: scale(1.002);
+}
+
+.containerCard1 a {
+    font-size: clamp(.4rem, 1.5vw, 1.4rem);
+    transition: ease .5s;
+}
+.containerCard1 a:hover, .finishWork a:hover {
+    transform: translateX(10px);
+    border-radius: 8px;
+    color: #ffa600;
+}
+@media (max-width: 430px) {
+    .containerCard{
+        width: 80%;
+        max-width: 500px;
+        margin: 10px;
+        padding: 10px;
+        background: linear-gradient(135deg, rgba(94, 94, 94, 0.1), rgba(94, 94, 94, 0));
+        border: 2px solid #747474;
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        box-shadow: 0 0 10px #ababab;
+        transition-duration: 0.3s;
+    }
+
+    ul, ol {
+        padding: 0px;
+        font-size: .4rem;
+        list-style-position: inside;
+    }
+    .containerCard li {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        width: 100%;
+        font-size: 10px !important;
+        box-sizing: border-box;
+        margin: auto;
+    }
+}
+@media (max-width: 330px) {
+    h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .containerCard{
+        width: 80%;
+        max-width: 500px;
+        margin: 10px;
+        padding: 10px;
+        background: linear-gradient(135deg, rgba(94, 94, 94, 0.1), rgba(94, 94, 94, 0));
+        border: 2px solid #747474;
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        box-shadow: 0 0 10px #ababab;
+        transition-duration: 0.3s;
+    }
+
+    .container {
+        margin: auto;
+        padding: 10px;
+        max-width: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    ul, ol {
+        padding: 0px;
+        font-size: .4rem;
+        list-style-position: inside;
+    }
+    .containerCard li {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        width: 100%;
+        font-size: 10px !important;
+        box-sizing: border-box;
+        margin: auto;
+    }
+
+    .containerCard img,  .container img, .Container img {
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        display: block;
+        margin: 10px auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #ababab;
+    }
+}
+
+.navOption {
+    display: flex;
+    padding: 20px;
+    padding-right: 60px;
+    justify-content: space-between;
+    gap: 30px;
+    position: fixed;
+    z-index: 1000;
+    width: 98%;
+    top: 0;
+    left: 0;
+    background-color: #0b1215;
+    font-family: poppins;
+}
+.navOption a {
+
+    word-break: break-all;
+    font-size: clamp(.4rem, 2vw, 2rem);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.githubRepo, .EDM {
+    color: rgb(244, 244, 244);
+    position: relative;
+    word-break: break-word;
+    max-width: max-content;
+}
+.githubRepo:hover, .EDM:hover {
+    color: #ffa600;
+    transition: .5s;
+}
+.githubRepo::before, .EDM::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-image: linear-gradient(to right, #ff8531, #ff8933, #ff8c35, #ff9037, #ff9339, #ff993d, #ff9f41, #ffa546, #ffae4e, #ffb757, #ffc061, #ffc86b);
+    transition: all .5s;
+}
+.githubRepo:hover::before, .EDM:hover::before{
+    width: 100%;
+    transition: all .5s;
+}
+img {
+    margin-top: 10px;
+    border: 2px solid #747474;
+    background: linear-gradient(135deg, rgba(94, 94, 94, 0.1),  rgb(94, 94, 94, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ababab;
+    transition-duration: 0.5s;
+}
+img:hover{
+    border-radius: 8px;
+    box-shadow: 0 0 20px #ababab;
+    -webkit-transform: scale(1.002);
+    transform: scale(1.002);
+}
+
+
+
+
+header, .containerCard .title, .containerCard h2, .containerCard1 .title, .finishWork h1{
+    color: rgb(244, 244, 244);
+    position: relative;
+    word-break: break-word;
+    max-width: max-content;
+}
+header:hover , .containerCard .title:hover, .containerCard h2:hover, .containerCard1 .title:hover, .finishWork h1:hover{
+    color: #ffa600;
+    transition: .5s;
+}
+header::before, .containerCard .title::before,.containerCard h2::before, .containerCard1 .title::before, .finishWork h1::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-image: linear-gradient(to right, #ff8531, #ff8933, #ff8c35, #ff9037, #ff9339, #ff993d, #ff9f41, #ffa546, #ffae4e, #ffb757, #ffc061, #ffc86b);
+    transition: all .5s;
+}
+header:hover::before, .containerCard .title:hover::before, .containerCard h2:hover::before, .containerCard1 .title:hover::before, .finishWork h1:hover::before{
+    width: 100%;
+    transition: all .5s;
+}
