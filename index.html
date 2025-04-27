@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Lab Task 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/ftask2.css">
+</head>
+<body>
+    <nav class="navOption">
+        <a href="https://jstn-rnn19.github.io/EDM-Portfolio-Justine-Reinn-Sanidad/" target="_self" rel="noopener noreferrer" class="EDM">EDM Portfolio</a>
+        <a href="https://github.com/jstn-rnn19/EDM-Portfolio-Justine-Reinn-Sanidad" target="_self" rel="noopener noreferrer" class="githubRepo">Github Repo</a>
+    </nav>
+    <div class="header">
+        <header>Final Lab Task 2 </header>
+        <h3>Transforming ER Model to Relational Tables</h3>
+    </div>
+    <main class="container">
+        <section class="containerCard">
+            <h1 class="title">Task Description:</h1>
+            <p>Given the ER diagram representing student assignment submissions, convert it into MySQL tables. Capture all entities and their attributes, and define the relationships between students, submissions, and assignments. Identify the primary and foreign keys and ensure proper representation of any dependent or weak entities.</p>
+            <img src="image/model.webp" alt="">
+        </section>
+        <section class="containerCard">
+            <h1 class="title">REQUIRED OUTPUT</h1>
+            <ol>
+                <li>Query statements (Task 1-4 including the table relationship)</li>
+                <li>Table Structure (Task 1- 4 including the table relationship)</li>
+                <li>ER Diagram or Relational schema from phpMyAdmin or Workbench (pdf or jpg file)</li>
+                <li>Sql copy of the database and table structures</li>
+            </ol>
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Step 1:</h1>
+            <ul>
+                <li>Open XAMPP and start the Apatche and MySQL then open MySQL workbench</li>
+                <li>Add a new connection</li>
+                <li>Click the connection made</li>
+            </ul>
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Step 2:</h1>
+            <ul>
+                <li>Create a DATABASE BY using <code>CREATE DATABASE database_name</code></li>
+                <li>Use the database that has created by using <code>USE database_name</code></li>
+            </ul>
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Type the following data types attributes</h1>
+            <ul>
+                <li><code>student</code>table:
+                    <ul>
+                        <li><code>username</code>: String (VARCHAR), up to 50 characters.</li>
+                    </ul>
+                </li>
+                <li>
+                    <code>assignment</code> table:
+                    <ul>
+                        <li class="text"><code>shortname</code>: String (VARCHAR), up to 50 characters. </li>
+                        <li><code>due_date</code>: Date, cannot be null.</li>
+                        <li><code>url</code>: String (VARCHAR), up to 255 characters, can be null.</li>
+                    </ul>
+                </li>
+                <li>
+                    <code>submission</code> table:
+                    <ul>
+                        <li><code>username</code>: String (VARCHAR), up to 50 characters.</li>
+                        <li><code>shortname</code>: String (VARCHAR), up to 50 characters.</li>
+                        <li><code>version</code>: Integer, represents the version of the submission.</li>
+                        <li><code>submit_date</code>: Date, cannot be null.</li>
+                        <li><code>Data</code>: Text</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Note: Create the appropriate table relationship and enforce necessary REFERENTIAL INTEGRITY CONSTRAINTS</p>
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Create student table</h1>
+            <h4>code</h4>
+            <code>CREATE TABLE student_tbl(username VARCHAR(50)PRIMARY KEY NOT NULL UNIQUE);</code>
+            <h2>Table Queries and Table Structures</h2>
+            <img src="image/copy1.webp" alt="">
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Create submission table</h1>
+            <h4>code</h4>
+            <code> CREATE TABLE submission_tbl(username VARCHAR(50), FOREIGN KEY (username) REFERENCES student_tbl(username), shortname VARCHAR(50), FOREIGN KEY(shortname) REFERENCES assignment_tbl(shortname) ON DELETE CASCADE ON UPDATE CASCADE, version INT NOT NULL, submit_date DATE NOT NULL, data TEXT, PRIMARY KEY(username, shortname, version));</code>
+            <h2>Table Queries and Table Structures</h2>
+            <img src="image/copy%202.webp" alt="">
+        </section>
+        <section class="containerCard">
+            <h1 class="title">Create assignment table</h1>
+            <h4>code</h4>
+            <code>CREATE TABLE assignment_tbl (shortname  VARCHAR(50) NOT NULL PRIMARY KEY , due_date DATE NOT NULL, url VARCHAR(255) UNIQUE);</code>
+            <h2>Table Queries and Table Structures</h2>
+            <img src="image/copy%203.webp" alt="">
+        </section>
+        <section class="containerCard">
+            <h1 class="title">HERE IS THE ER Diagram OR Relational schema</h1>
+            <img src="image/erd model1.webp" alt="">
+        </section>
+        <section class="containerCard1">
+            <h1 class="title">HERE IS THE MYSQL FILE</h1>
+            <a href="file/assignment_submission_db_student_tbl.sql" target="_blank" rel="noopener noreferrer">Student Table</a>
+            <a href="file/assignment_submission_db_submission_tbl.sql" target="_blank" rel="noopener noreferrer">Submission Table</a>
+            <a href="file/assignment_submission_db_assignment_tbl.sql" target="_blank" rel="noopener noreferrer">Assignment Table</a>
+            <a href="https://github.com/jstn-rnn19/EDM-Portfolio-Justine-Reinn-Sanidad/tree/main/Final%20Lab%20Task%202" target="_blank" rel="noopener noreferrer">Here is the github repo for this task</a>
+        </section>
+        <div class="finishWork">
+            <h1>Here's the Github Repo For Final Lab Task 1</h1>
+            <a href="https://github.com/jstn-rnn19/EDM-Portfolio-Justine-Reinn-Sanidad/tree/main/Final%20Lab%20Task%201" target="_blank" rel="noopener noreferrer">Github Repo for Task 3</a>
+        </div>
+    </main>
+</body>
+</html>
